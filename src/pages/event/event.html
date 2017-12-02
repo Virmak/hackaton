@@ -1,0 +1,43 @@
+<!--
+  Generated template for the EventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>event</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    
+      <ion-item>
+        <ion-label floating>Event Name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Location</ion-label>
+        
+        <ion-input ></ion-input>
+        <ion-input ></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea name="description"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
