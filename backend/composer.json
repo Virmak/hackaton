@@ -1,0 +1,15 @@
+{
+    "name": "med/hackaton",
+    "authors": [
+        {
+            "name": "Med ben Amar",
+            "email": "medxbenamar@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0"
+    },
+    "psr-4": {
+        "App\\": "app/"
+    }
+}
