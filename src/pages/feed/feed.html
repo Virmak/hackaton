@@ -1,0 +1,55 @@
+<!--
+  Generated template for the FeedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  
+        <ion-card *ngFor="let event of events; let i = index" (click)="openEvent(event.id)">
+            
+          <ion-item>
+            
+            <h2>  <ion-icon name="calendar"></ion-icon> {{event.name}}</h2>
+            <p>{{event.start_date}}</p>
+          </ion-item>
+          
+        
+          <ion-card-content>
+            <p>{{event.desctiption}}</p>  
+          </ion-card-content>
+        
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="people"></ion-icon>
+                <div>12 Participants</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>4 Comments</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+              <ion-note>
+                11h ago
+              </ion-note>
+            </ion-col>
+          </ion-row>
+        
+        </ion-card>
+
+
+</ion-content>

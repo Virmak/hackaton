@@ -23,7 +23,7 @@ class EventController extends Controller
     {
         $event = new Event();
 
-        $event->name = $request->getParam('event_name');
+        $event->name = $request->getParam('name');
         $event->start_date = $request->getParam('start_date');
         $event->location = $request->getParam('location');
         $event->description = $request->getParam('description');
@@ -41,8 +41,13 @@ class EventController extends Controller
     public function read(RequestInterface $request, ResponseInterface $response)
     {
         $id = $request->getParam('id');
-        $event = User::find($id);
+        $event = Event::find($id);
         return $event;
+    }
+
+    public function all(RequestInterface $request, ResponseInterface $response)
+    {
+        return json_encode(Event::all());
     }
 
     public function update(RequestInterface $request, ResponseInterface $response)

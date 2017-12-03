@@ -24,4 +24,20 @@ export class HackatonProvider {
     return this.http.post(this.baseUrl + '/user/get', body);
   }
 
+  createEvent(eventData): Observable<any> {
+
+    let body = new FormData();
+    body.append('name', eventData.name);
+    body.append('start_date', eventData.start_date);
+    body.append('description', eventData.description);
+    body.append('location', eventData.location);
+    body.append('user_id', eventData.user_id);
+
+    return this.http.post(this.baseUrl + '/event/create', body);
+  }
+
+  getEvents() {
+    return this.http.post(this.baseUrl + '/event/all', '');
+  }
+
 }

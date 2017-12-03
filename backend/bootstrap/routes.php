@@ -18,3 +18,4 @@ $app->post('/user/create', 'UserController:create')->setName('CreateUser');
 $app->post('/user/update', 'UserController:update')->setName('UpdateUser');
 
 $app->post('/event/create', 'EventController:create')->setName('CreateEvent');
+$app->post('/event/all', 'EventController:all');

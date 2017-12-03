@@ -18,6 +18,8 @@ import { SignupPage } from '../pages/signup/signup';
 import { HackatonProvider } from '../providers/hackaton/hackaton';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateEventPage } from '../pages/create-event/create-event';
+import { FeedPage } from '../pages/feed/feed';
+import { ShowEventPage } from '../pages/show-event/show-event';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CreateEventPage } from '../pages/create-event/create-event';
     ContactPage,
     HomePage,
     TabsPage,
-    CreateEventPage
+    CreateEventPage,
+    FeedPage,
+    ShowEventPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import { CreateEventPage } from '../pages/create-event/create-event';
     ContactPage,
     HomePage,
     TabsPage,
-    CreateEventPage
+    CreateEventPage,
+    FeedPage,
+    ShowEventPage
   ],
   providers: [
     StatusBar,
