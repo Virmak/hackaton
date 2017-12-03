@@ -32,7 +32,7 @@
 
     </ion-list>
 
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{eventData.location}}&&markers=color:blue%7Clabel:S%7C{{eventData.location}}&zoom=12&size=400x400&key=AIzaSyBi-w-d6GRiowKiHkTgsUjyRC68K5Q44Wo" alt="">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{eventData.location}}&&markers=color:blue%7Clabel:S%7C{{eventData.location}}&zoom=15&size=400x400&key=AIzaSyBi-w-d6GRiowKiHkTgsUjyRC68K5Q44Wo" alt="">
 
   </ion-card>
 
@@ -51,7 +51,7 @@
 
       <ion-row>
           <ion-col>
-              <div class="userName-c">{{comment.user.username}}</div>
+              <div (click)="gotoProfile(comment.user.id)" class="userName-c">{{comment.user.username}}</div>
           </ion-col>
       </ion-row>
   </ion-card>

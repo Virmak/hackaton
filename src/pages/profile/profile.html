@@ -35,7 +35,7 @@
               <ion-item>Tel :{{userData.tel}}</ion-item>
               <ion-item>Adresse :{{userData.address}}</ion-item>
               <ion-item>Scroe :{{userData.score}}</ion-item>
-              <button ion-button (click)="editprofile()" >Edit Profile</button>
+              <button ion-button *ngIf="currentUser" (click)="editprofile()" >Edit Profile</button>
               
               
               

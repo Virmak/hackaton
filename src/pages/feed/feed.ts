@@ -27,7 +27,10 @@ export class FeedPage {
   }
 
   openEvent(id) {
-    this.navCtrl.push(ShowEventPage, id);
+    this.navCtrl.push(ShowEventPage, {
+      eventId: id,
+      userId: this.navParams.data
+    });
   }
 
   ionViewDidLoad() {

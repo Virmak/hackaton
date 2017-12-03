@@ -2,6 +2,7 @@ import { ModifypofilePage } from './../modifypofile/modifypofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HackatonProvider } from '../../providers/hackaton/hackaton';
+import { Storage } from '@ionic/storage';
 
 
 /**
@@ -28,13 +29,31 @@ export class ProfilePage {
     score:""
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private provider:HackatonProvider) {
+  currentUser = false;
 
-    this.provider.getUserById(2).subscribe((response) => {
-      console.log(response);
-      this.userData = response;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private provider:HackatonProvider,
+    private storage: Storage) {
 
-    });
+      if (this.navParams.data.userId == null) {
+        this.storage.get('userId').then((val) => {
+          
+          this.provider.getUserById(val).subscribe((response) => {
+            this.userData = response;
+            
+          });
+        });
+
+        this.currentUser = true;
+      } else {
+        this.provider.getUserById(this.navParams.data.userId).subscribe((response) => {
+          this.currentUser = false;
+          this.userData = response;
+        });
+      }
+      
   }
 
   ionViewDidLoad() {

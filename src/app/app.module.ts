@@ -21,6 +21,8 @@ import { CreateEventPage } from '../pages/create-event/create-event';
 import { FeedPage } from '../pages/feed/feed';
 import { ShowEventPage } from '../pages/show-event/show-event';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +41,8 @@ import { ShowEventPage } from '../pages/show-event/show-event';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
