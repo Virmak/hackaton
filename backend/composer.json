@@ -1,0 +1,19 @@
+{
+    "name": "med/hackaton",
+    "authors": [
+        {
+            "name": "Med ben Amar",
+            "email": "medxbenamar@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0",
+        "illuminate/database": "~5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Virmak\\": "app/"
+        }
+    }
+
+}
