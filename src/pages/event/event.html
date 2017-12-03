@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>event</ion-title>
+    <ion-title>Add Event</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
   <ion-list>
     
@@ -28,16 +28,36 @@
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Location</ion-label>
-        
-        <ion-input ></ion-input>
-        <ion-input ></ion-input>
+        <ion-label >Location</ion-label>
+               
       </ion-item>
-    
+
+      </ion-list>
+
+      <div #map id ="map"></div>
+      <ion-list>
       <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea name="description"></ion-textarea>
+        <ion-label floating>Description</ion-label>
+        <ion-input type="text"></ion-input>
       </ion-item>
     </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label >Planning</ion-label>
+       
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Hour</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="myHour"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Content</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <button >Add Plans</button>
+    </ion-list>
+
+  
+    
 
 </ion-content>
