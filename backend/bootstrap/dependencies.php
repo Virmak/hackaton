@@ -20,7 +20,9 @@ $container['UserController'] = function ($container) {
     return new \Virmak\Controllers\UserController($container);
 };
 
-
+$container['EventController'] = function ($container) {
+    return new \Virmak\Controllers\EventController($container);
+};
 
 
 

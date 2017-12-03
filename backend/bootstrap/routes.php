@@ -16,3 +16,5 @@ $app->get('/', 'HomeController:index')->setName('Home');
 $app->post('/user/get', 'UserController:read')->setName('ReadUser');
 $app->post('/user/create', 'UserController:create')->setName('CreateUser');
 $app->post('/user/update', 'UserController:update')->setName('UpdateUser');
+
+$app->post('/event/create', 'EventController:create')->setName('CreateEvent');
