@@ -56,7 +56,7 @@ class UserController extends Controller
             $user = User::find($id);
         }
 
-        return $user;
+        return json_encode($user);
     }
 
     public function update(RequestInterface $request, ResponseInterface $response)

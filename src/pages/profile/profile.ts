@@ -19,19 +19,20 @@ import { HackatonProvider } from '../../providers/hackaton/hackaton';
 export class ProfilePage {
   userData={
     imageSrc:"",
-    firstName:"skander",
-    lastName:"loussaief",
-    userName:"sk",
-    email:"Iskander@gmail.com",
-    tel :"24717078",
-    adresse :"rte gremda",
-    score:"5"
+    firstName:"",
+    lastName:"",
+    userName:"",
+    email:"",
+    tel :"",
+    adresse :"",
+    score:""
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private provider:HackatonProvider) {
 
     this.provider.getUserById(2).subscribe((response) => {
       console.log(response);
+      this.userData = response;
 
     });
   }
@@ -41,7 +42,7 @@ export class ProfilePage {
   }
   editprofile()
   {
-    this.navCtrl.push(ModifypofilePage);
+    this.navCtrl.push(ModifypofilePage, this.userData);
   }
 
 }

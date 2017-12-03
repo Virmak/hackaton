@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>modifypofile</ion-title>
+    <ion-title>Edit Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,42 +17,42 @@
   <ion-list>
     <ion-item>
         <ion-label floating>First Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.first_name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Last Name</ion-label>
-        <ion-input type="text" ></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.last_name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>User name</ion-label>
-        <ion-input type="text" ></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
       </ion-item>
       <ion-item>
       <ion-label>Birth Date</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birth_date"></ion-datetime>
     </ion-item>
       <ion-item>
         <ion-label floating>Adresse</ion-label>
-        <ion-input type="text" ></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.address"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Role</ion-label>
-        <ion-select [(ngModel)]="role">
-          <ion-option value="participant">Participant</ion-option>
-          <ion-option value="organizer">Organizer</ion-option>
-          <ion-option value="club">Club</ion-option>
+        <ion-select [(ngModel)]="userData.role_id">
+          <ion-option value="0">Participant</ion-option>
+          <ion-option value="1">Organizer</ion-option>
+          <ion-option value="2">Club</ion-option>
           
         </ion-select>
         </ion-item>
         <ion-item>
-        <button ion-button>confirm </button>
+        <button ion-button>Save</button>
       </ion-item>
       
-    </ion-list>     
+    </ion-list>      
       
      
      

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ModifypofilePage page.
+ * Generated class for the CreateEventPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-modifypofile',
-  templateUrl: 'modifypofile.html',
+  selector: 'page-create-event',
+  templateUrl: 'create-event.html',
 })
-export class ModifypofilePage {
+export class CreateEventPage {
 
-  userData = {};
+  eventData = { };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.userData = navParams.data;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModifypofilePage');
+    console.log('ionViewDidLoad CreateEventPage');
   }
 
- 
 }

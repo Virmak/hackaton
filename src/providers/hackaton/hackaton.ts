@@ -18,7 +18,10 @@ export class HackatonProvider {
   }
 
   getUserById(id): Observable<any> {
-    return this.http.post(this.baseUrl + '/user/get', id);
+    
+    let body = new FormData();
+    body.append('id', id);
+    return this.http.post(this.baseUrl + '/user/get', body);
   }
 
 }

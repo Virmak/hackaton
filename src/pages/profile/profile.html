@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,24 +18,24 @@
         
           <ion-item>
             <ion-avatar item-start>
-              <img src="img/marty-avatar.png">
+              <img src="assets/imgs/profile.png">
             </ion-avatar>
-            <h2>Marty McFly</h2>
-            <p>November 5, 1955</p>
+            <h2>{{userData.first_name}} {{userData.last_name}}</h2>
+            <p>{{userData.birth_date}}</p>
           </ion-item>
         
           <img src="img/advance-card-bttf.png">
           <ion-list>
               
-              <ion-item>First Name :{{userData.firstName}}</ion-item>
-              <ion-item>Last Name :{{userData.lastName}}</ion-item>
-              <ion-item>User Name :{{userData.userName}}</ion-item>
+              <ion-item>First Name :{{userData.first_name}}</ion-item>
+              <ion-item>Last Name :{{userData.last_name}}</ion-item>
+              <ion-item>User Name :{{userData.username}}</ion-item>
               
               <ion-item>Email :{{userData.email}}</ion-item>
               <ion-item>Tel :{{userData.tel}}</ion-item>
-              <ion-item>Adresse :{{userData.adresse}}</ion-item>
+              <ion-item>Adresse :{{userData.address}}</ion-item>
               <ion-item>Scroe :{{userData.score}}</ion-item>
-              <button ion-button (click)="editprofile()" >Modify profile</button>
+              <button ion-button (click)="editprofile()" >Edit Profile</button>
               
               
               

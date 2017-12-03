@@ -17,6 +17,7 @@ import { ModifypofilePage } from '../pages/modifypofile/modifypofile';
 import { SignupPage } from '../pages/signup/signup';
 import { HackatonProvider } from '../providers/hackaton/hackaton';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateEventPage } from '../pages/create-event/create-event';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CreateEventPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     ModifypofilePage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CreateEventPage
   ],
   providers: [
     StatusBar,
