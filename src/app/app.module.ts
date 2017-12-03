@@ -1,3 +1,4 @@
+import { ProfilePage } from './../pages/profile/profile';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -7,14 +8,22 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import {InscriptionPage} from '../pages/inscription/inscription';
+import {SearchPage} from '../pages/search/search';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ModifypofilePage } from '../pages/modifypofile/modifypofile';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
+    InscriptionPage,
+    ProfilePage,
+    ModifypofilePage,
+    SearchPage,
     ContactPage,
     HomePage,
     TabsPage
@@ -27,6 +36,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     AboutPage,
+    InscriptionPage,
+    ProfilePage,
+    SearchPage,
+    ModifypofilePage,
     ContactPage,
     HomePage,
     TabsPage
