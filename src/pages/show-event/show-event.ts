@@ -16,13 +16,28 @@ import { HackatonProvider } from '../../providers/hackaton/hackaton';
 })
 export class ShowEventPage {
 
-  eventData: any;
+  lat: number;
+  lng: number;
+
+  commentMessage: string = '';
+
+  eventData: any = {
+    name:"",
+    start_date: "",
+    description: "",
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private provider: HackatonProvider) {
-  
-    console.log(this.navParams.data);
-    //this.provider.getEventById(this.navParams.data);
+    this.provider.getEventById(this.navParams.data).subscribe(response => {
+      this.eventData = response;
+      this.eventData.location = this.eventData.location.replace('(', '').replace(')', '');
+    });
+  }
 
+  submitComment() {
+    this.provider.registerComment(2, this.navParams.data, this.commentMessage).subscribe(response => {
+      console.log(response);
+    });
   }
 
   ionViewDidLoad() {

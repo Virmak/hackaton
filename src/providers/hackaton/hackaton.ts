@@ -40,4 +40,26 @@ export class HackatonProvider {
     return this.http.post(this.baseUrl + '/event/all', '');
   }
 
+  getEventById(id)
+  {
+    let body = new FormData();
+    body.append('id', id);
+    return this.http.post(this.baseUrl + '/event/get', body);
+  }
+
+  searchEventByName(name) {
+    let body = new FormData();
+    body.append('query', name);
+    return this.http.post(this.baseUrl + '/event/search', body);
+  }
+
+  registerComment(userId, eventId, message) {
+    let body = new FormData();
+    body.append('user_id', userId);
+    body.append('event_id', eventId);
+    body.append('message', message);
+
+    return this.http.post(this.baseUrl + '/comment/create', body);
+  }
+
 }

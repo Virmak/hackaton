@@ -42,7 +42,14 @@ class EventController extends Controller
     {
         $id = $request->getParam('id');
         $event = Event::find($id);
-        return $event;
+        return json_encode($event);
+    }
+
+    public function search(RequestInterface $request, ResponseInterface $response)
+    {
+
+        $name = $request->getParam('query');
+        return json_encode($this->table->where('name', 'LIKE', $name . '%')->get());
     }
 
     public function all(RequestInterface $request, ResponseInterface $response)

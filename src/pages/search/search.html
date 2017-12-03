@@ -14,10 +14,10 @@
 
 
 <ion-content padding>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
-      <ion-item *ngFor="let item of items">
-        {{ item }}
+      <ion-item *ngFor="let item of items" (click)="gotoEvent(item.id)">
+        {{ item.name }}
       </ion-item>
     </ion-list>
 </ion-content>

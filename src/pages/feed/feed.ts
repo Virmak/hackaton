@@ -18,7 +18,7 @@ import { ShowEventPage } from '../show-event/show-event';
 })
 export class FeedPage {
 
-  events = [];
+  events : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public provider: HackatonProvider) {
 

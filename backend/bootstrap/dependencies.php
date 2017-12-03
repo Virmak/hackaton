@@ -24,5 +24,9 @@ $container['EventController'] = function ($container) {
     return new \Virmak\Controllers\EventController($container);
 };
 
+$container['CommentController'] = function ($container) {
+    return new \Virmak\Controllers\CommentController($container);
+};
+
 
 

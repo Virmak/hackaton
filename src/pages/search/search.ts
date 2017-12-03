@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HackatonProvider } from '../../providers/hackaton/hackaton';
+import { ShowEventPage } from '../show-event/show-event';
 
 /**
  * Generated class for the SearchPage page.
@@ -14,14 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'search.html',
 })
 export class SearchPage {
-  items=[
-    "gdg",
-    "MTC",
-    "Apple",
-    "Windows",
-    "Java"
-  ]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  items:any;
+
+  searchQuery: string = '';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private provider: HackatonProvider) {
   }
 
   ionViewDidLoad() {
@@ -29,7 +28,11 @@ export class SearchPage {
   }
 
   getItems(event){
-console.log(event);
+    this.provider.searchEventByName(this.searchQuery).subscribe(response => this.items=response);
+  }
+
+  gotoEvent(id) {
+    this.navCtrl.push(ShowEventPage, id);
   }
 
 }

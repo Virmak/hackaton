@@ -7,12 +7,53 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>showEvent</ion-title>
+    <ion-title>Event</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      {{eventData.name}}
+    </ion-card-header>
+
+    <ion-list>
+
+      <ion-item>
+        Date: {{ eventData.start_date }}
+      </ion-item>
+
+      <ion-item>
+        Description: {{ eventData.description }}
+      </ion-item>
+
+    </ion-list>
+
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{eventData.location}}&&markers=color:blue%7Clabel:S%7C{{eventData.location}}&zoom=12&size=400x400&key=AIzaSyBi-w-d6GRiowKiHkTgsUjyRC68K5Q44Wo" alt="">
+
+  </ion-card>
+
+
+  <ion-input [(ngModel)]="commentMessage" type="text" placeholder="Write a comment"></ion-input>
+  <button ion-button small (click)="submitComment()">Submit</button>
+  
+  <br>
+
+  <ion-card *ngFor="let comment of eventData.comments; let i = index">
+      <ion-card-content>
+        <p>
+          {{comment.message}}
+        </p>
+      </ion-card-content>
+
+      <ion-row>
+          <ion-col>
+              <div class="userName-c">{{comment.user.username}}</div>
+          </ion-col>
+      </ion-row>
+  </ion-card>
 
 </ion-content>
