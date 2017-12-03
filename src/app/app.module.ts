@@ -8,19 +8,21 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import {InscriptionPage} from '../pages/inscription/inscription';
 import {SearchPage} from '../pages/search/search';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModifypofilePage } from '../pages/modifypofile/modifypofile';
+import { SignupPage } from '../pages/signup/signup';
+import { HackatonProvider } from '../providers/hackaton/hackaton';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    InscriptionPage,
+    SignupPage,
     ProfilePage,
     ModifypofilePage,
     SearchPage,
@@ -30,13 +32,14 @@ import { ModifypofilePage } from '../pages/modifypofile/modifypofile';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    InscriptionPage,
+    SignupPage,
     ProfilePage,
     SearchPage,
     ModifypofilePage,
@@ -47,7 +50,8 @@ import { ModifypofilePage } from '../pages/modifypofile/modifypofile';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HackatonProvider
   ]
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
 import { ModifypofilePage } from './../modifypofile/modifypofile';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HackatonProvider } from '../../providers/hackaton/hackaton';
 
 
 /**
@@ -27,7 +28,12 @@ export class ProfilePage {
     score:"5"
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private provider:HackatonProvider) {
+
+    this.provider.getUserById(2).subscribe((response) => {
+      console.log(response);
+
+    });
   }
 
   ionViewDidLoad() {
@@ -36,7 +42,6 @@ export class ProfilePage {
   editprofile()
   {
     this.navCtrl.push(ModifypofilePage);
-    
   }
 
 }
